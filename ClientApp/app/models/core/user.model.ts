@@ -1,8 +1,8 @@
 ﻿export class UserModel {
     constructor() {
-        this.username = "";
+        this.userName = "";
         this.password = "";
     }
-    username: string;
+    userName: string;
     password: string;
 }

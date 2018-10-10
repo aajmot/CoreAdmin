@@ -4,15 +4,19 @@ import { ActionResultModel } from '../../models/core/actionresult.model';
 
 @Injectable()
 export class UserService {
+    public isUserLoggedIn: boolean;
+
     actionResultModel: ActionResultModel;
 
     constructor() {
         this.actionResultModel = new ActionResultModel();
+        this.isUserLoggedIn = false;
     }
 
     authenticateUser(model: UserModel) {
-        if (model.username == "admin" && model.password == "admin") {
+        if (model.userName == "admin" && model.password == "admin") {
             this.actionResultModel.status = true;
+            this.isUserLoggedIn = true;
             this.actionResultModel.messages.push("login successfull");
         }
         else {

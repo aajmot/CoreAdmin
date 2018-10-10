@@ -14,6 +14,9 @@ import { CounterComponent } from './components/counter/counter.component';
 
 import { UserService } from './services/core/user.service';
 import { HttpClientService } from './services/core/httpclient.service';
+import { UserComponent } from './components/user/user.component';
+import { AddUserComponent } from './components/user/add.user.component';
+import { UserModel } from './models/core/user.model';
 
 @NgModule({
     declarations: [
@@ -23,6 +26,8 @@ import { HttpClientService } from './services/core/httpclient.service';
         FetchDataComponent,
         HomeComponent,
         LoginComponent,
+        UserComponent,
+        AddUserComponent
     ],
     imports: [
         CommonModule,
@@ -34,12 +39,19 @@ import { HttpClientService } from './services/core/httpclient.service';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: '**', redirectTo: 'home' }
+            { path: 'user', component: UserComponent },
+            { path: 'add-user', component: AddUserComponent },
+
+
+
+
+            { path: '**', redirectTo: 'home' },
         ])
     ],
     providers: [
         HttpClientService,
-        UserService
+        UserService,
+        UserModel
     ]
 })
 export class AppModuleShared {
