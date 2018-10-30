@@ -15,5 +15,14 @@ export class UserComponent {
         user1.userName = "Admin";
         user1.password = "Admin";
         this.userList.push(user1);
+        let user2: UserModel = new UserModel();
+        user2.userName = "Manager";
+        user2.password = "manager@123";
+        this.userList.push(user2);
+        let user3: UserModel = new UserModel();
+        user3.userName = "SalesManager";
+        user3.password = "salesmanager@123";
+        this.userList.push(user3);
+
     }
 }

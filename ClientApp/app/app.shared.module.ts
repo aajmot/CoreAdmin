@@ -17,11 +17,13 @@ import { HttpClientService } from './services/core/httpclient.service';
 import { UserComponent } from './components/user/user.component';
 import { AddUserComponent } from './components/user/add.user.component';
 import { UserModel } from './models/core/user.model';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
+        FooterComponent,
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
