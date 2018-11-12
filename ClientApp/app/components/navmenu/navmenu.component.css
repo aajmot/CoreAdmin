@@ -2,6 +2,10 @@ li .glyphicon {
     margin-right: 10px;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+    position: relative;
+}
 /* Highlighting rules for nav menu items */
 li.link-active a,
 li.link-active a:hover,

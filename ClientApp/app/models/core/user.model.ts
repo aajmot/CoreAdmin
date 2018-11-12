@@ -5,4 +5,5 @@
     }
     userName: string;
     password: string;
+    gender: string;
 }

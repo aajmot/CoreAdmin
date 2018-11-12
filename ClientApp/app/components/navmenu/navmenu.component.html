@@ -28,16 +28,25 @@
                         <span class='glyphicon glyphicon-th-list'></span> Fetch data
                     </a>
                 </li>
+                <li class="dropdown" [routerLinkActive]="['link-active']">
+                    <a href="#" data-toggle="dropdown">
+                        <span class='glyphicon glyphicon-user'></span>User
+                    </a>
+                    <ul id="user-menu" class="dropdown-menu  clearfix" role="menu">
+                        <li><a [routerLink]="['/user']">Deatails</a></li>
+                        <li><a [routerLink]="['/add-user']">Add New</a></li>
+                    </ul>
+                </li>
                 <li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/login']">
                         <span class='glyphicon glyphicon-th-list'></span> Login
                     </a>
                 </li>
-                <li [routerLinkActive]="['link-active']">
+                <!--<li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/user']">
                         <span class='glyphicon glyphicon-user'></span>User
                     </a>
-                </li>
+                </li>-->
             </ul>
         </div>
     </div>
