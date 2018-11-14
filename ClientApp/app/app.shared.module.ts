@@ -18,6 +18,10 @@ import { UserComponent } from './components/user/user.component';
 import { AddUserComponent } from './components/user/add.user.component';
 import { UserModel } from './models/core/user.model';
 import { FooterComponent } from './components/footer/footer.component';
+import { ActionResultModel } from './models/core/actionresult.model';
+import { HttpClientModel } from './models/core/httpclient.model';
+import { AuthenticationGuard } from './services/core/authentication';
+import { AppModel } from './models/core/app.model';
 
 @NgModule({
     declarations: [
@@ -36,24 +40,28 @@ import { FooterComponent } from './components/footer/footer.component';
         HttpModule,
         FormsModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: '', redirectTo: 'login', pathMatch: 'full' },
             { path: 'login', component: LoginComponent },
-            { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'user', component: UserComponent },
-            { path: 'add-user', component: AddUserComponent },
+            { path: 'home', component: HomeComponent, canActivate: [AuthenticationGuard] },
+            { path: 'counter', component: CounterComponent, canActivate: [AuthenticationGuard] },
+            { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthenticationGuard] },
+            { path: 'user', component: UserComponent, canActivate: [AuthenticationGuard] },
+            { path: 'add-user', component: AddUserComponent, canActivate: [AuthenticationGuard] },
 
 
-
-
-            { path: '**', redirectTo: 'home' },
+            { path: '**', redirectTo: 'login' },
         ])
     ],
     providers: [
+        UserModel,
+        ActionResultModel,
+        HttpClientModel,
+        AppModel,
+
+        AuthenticationGuard,
+
         HttpClientService,
         UserService,
-        UserModel
     ]
 })
 export class AppModuleShared {

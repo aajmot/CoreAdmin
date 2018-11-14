@@ -26,8 +26,11 @@
     <None Remove="ClientApp\app\components\login\login.component.ts" />
     <None Remove="ClientApp\app\components\user\add.user.component.ts" />
     <None Remove="ClientApp\app\models\core\actionresult.model.ts" />
+    <None Remove="ClientApp\app\models\core\app.model.ts" />
+    <None Remove="ClientApp\app\models\core\httpclient.model.ts" />
     <None Remove="ClientApp\app\models\core\menu.model.ts" />
     <None Remove="ClientApp\app\models\user.model.ts" />
+    <None Remove="ClientApp\app\services\core\authentication.ts" />
     <None Remove="ClientApp\app\services\core\menu.service.ts" />
     <None Remove="ClientApp\app\services\httpclient.service.ts" />
     <None Remove="ClientApp\app\services\user.service.ts" />
@@ -39,8 +42,11 @@
     <TypeScriptCompile Include="ClientApp\app\components\login\login.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\user\add.user.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\core\actionresult.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\core\app.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\core\httpclient.model.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\core\menu.model.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\core\user.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\core\authentication.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\core\httpclient.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\core\menu.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\core\user.service.ts" />

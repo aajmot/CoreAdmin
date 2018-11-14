@@ -2,6 +2,8 @@
 import { NgForm } from '@angular/forms';
 import { UserModel } from '../../models/core/user.model';
 import { UserService } from '../../services/core/user.service';
+import { ActionResultModel } from '../../models/core/actionresult.model';
+import { Router } from '@angular/router';
 
 //import { UserService } from '../../services/user.service';
 
@@ -11,15 +13,31 @@ import { UserService } from '../../services/core/user.service';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+    private _actionResultModel: ActionResultModel;
 
-    public model: UserModel;
+    constructor(public model: UserModel, private router: Router, private _userService: UserService) {
 
-    constructor(private userService: UserService) {
-        this.model = new UserModel();
+    }
+    ngOnInit() {
+        localStorage.setItem('user', "");
     }
 
     loginUser() {
-        this.userService.authenticateUser(this.model);
+        this._actionResultModel = this._userService.authenticateUser(this.model);
+        if (this._actionResultModel != null) {
+            if (this._actionResultModel.status) {
+                this.router.navigate(['/home']);
+            }
+            else {
+                console.log("login failed");
+            }
+        }
+        else {
+            this._actionResultModel = new ActionResultModel();
+            this._actionResultModel.messages.push("credentials required");
+            this._actionResultModel.status = false;
+        }
+
     }
 
 }

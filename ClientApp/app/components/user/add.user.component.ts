@@ -10,7 +10,7 @@ import { HttpClientService } from '../../services/core/httpclient.service';
 })
 export class AddUserComponent {
 
-    constructor(public model: UserModel) {
+    constructor(public model: UserModel, private _service: UserService) {
 
     }
     resetModel() {
@@ -19,9 +19,7 @@ export class AddUserComponent {
     }
     addUser(model: UserModel) {
 
-        //var response=this._httpClientService.post("", model);
-
-
+        this._service.create(model);
     }
     updateUser(model: UserModel) {
         //call service to add User in DB

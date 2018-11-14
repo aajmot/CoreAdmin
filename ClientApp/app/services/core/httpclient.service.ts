@@ -1,14 +1,15 @@
 ﻿import { Injectable } from '@angular/core';
+import { HttpClientModel } from '../../models/core/httpclient.model';
 
 @Injectable()
 export class HttpClientService {
     constructor() {
     }
 
-    post(url: string, model: object) {
+    post(model: HttpClientModel) {
         //make post request to API
-        console.log("post url=" + url);
-        console.log("post data=" + model);
+        console.log("post url=" + model.url);
+        console.log("post data=" + model.data.length);
     }
 
 }

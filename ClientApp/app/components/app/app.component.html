@@ -1,11 +1,11 @@
 <div class='container-fluid'>
     <div class='row'>
-        <div class='col-sm-3' *ngIf="true">
+        <div class='col-sm-3' *ngIf="model.isUserLoggedIn">
             <nav-menu></nav-menu>
         </div>
         <div class='col-sm-9 body-content'>
             <router-outlet></router-outlet>
         </div>
     </div>
-   <page-footer></page-footer>
+    <page-footer *ngIf="model.isUserLoggedIn"></page-footer>
 </div>
